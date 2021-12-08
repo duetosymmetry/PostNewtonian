@@ -1,0 +1,1830 @@
+Notebook[{
+Cell[TextData[{
+ "Integrals appearing in the PN calculation of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[CapitalPsi]", "M"], TraditionalForm]],ExpressionUUID->
+  "9fbeb647-7964-419e-8699-25dc4c2c7869"]
+}], "Section",ExpressionUUID->"07e7862b-c627-4711-9f4f-4521620248f7"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Author: Leo C. Stein \[LeftAngleBracket]",
+ ButtonBox["leo.stein@gmail.com",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["mailto:leo.stein@gmail.com"], None},
+  ButtonNote->"mailto:leo.stein@gmail.com"],
+ "\[RightAngleBracket]\nDate: 2021 Dec. 8"
+}], "Subtitle",ExpressionUUID->"8eeb84aa-d57a-4b0a-958a-14556e7553a8"],
+
+Cell[TextData[{
+ "All the integrals in the PN calculation of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[CapitalPsi]", "M"], TraditionalForm]],ExpressionUUID->
+  "b2e52c30-54b3-462f-84a1-281b557c874b"],
+ " are of the form\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    UnderoverscriptBox["\[Integral]", "0", "x"], 
+    RowBox[{
+     FractionBox["dx", "dt"], 
+     SuperscriptBox["e", 
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]"}]], 
+     SuperscriptBox["x", "k"], " ", "dx"}]}], TraditionalForm]],
+  ExpressionUUID->"c3206e3d-793f-478d-99db-0773fdb0e929"],
+ ",\nwhere \[Psi](x) is the PN series for the effective phase, and dx/dt is \
+the PN series for the frequency evolution."
+}], "Text",ExpressionUUID->"61e0c3de-fdec-40b4-9186-fcde2533e07f"],
+
+Cell[CellGroupData[{
+
+Cell["1. Inputs", \
+"Subsection",ExpressionUUID->"9e5cc48a-74ff-4e23-9dcb-693e333d3697"],
+
+Cell["Note: I did not check the below expressions.", \
+"Text",ExpressionUUID->"619dbadc-634b-4852-bced-e4eee1bff43f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Psi]", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"32", "*", "\[Nu]", "*", 
+       RowBox[{"x", "^", 
+        RowBox[{"(", 
+         RowBox[{"5", "/", "2"}], ")"}]}]}], ")"}]}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"x", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3715", "/", "1008"}], "+", 
+         RowBox[{
+          RowBox[{"55", "/", "12"}], "*", "\[Nu]"}]}], ")"}]}], "-", 
+      RowBox[{"10", "*", "\[Pi]", "*", 
+       RowBox[{"x", "^", 
+        RowBox[{"(", 
+         RowBox[{"3", "/", "2"}], ")"}]}]}], "+", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"15293365", "/", "1016064"}], "+", 
+         RowBox[{
+          RowBox[{"27145", "/", "1008"}], "*", "\[Nu]"}], "+", 
+         RowBox[{
+          RowBox[{"3085", "/", "144"}], "*", 
+          RowBox[{"\[Nu]", "^", "2"}]}]}], ")"}]}], "+", 
+      RowBox[{"\[Pi]", "*", 
+       RowBox[{"x", "^", 
+        RowBox[{"(", 
+         RowBox[{"5", "/", "2"}], ")"}]}], "*", 
+       RowBox[{"Log", "[", 
+        RowBox[{"x", "/", "x0"}], "]"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"38645", "/", "1344"}], "-", 
+         RowBox[{
+          RowBox[{"65", "/", "15"}], "*", "\[Nu]"}]}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"x", "^", 
+        RowBox[{"(", "3", ")"}]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"12348611926451", "/", "18776862720"}], "-", 
+         RowBox[{
+          RowBox[{"160", "/", "3"}], "*", 
+          RowBox[{"\[Pi]", "^", "2"}]}], "-", 
+         RowBox[{
+          RowBox[{"856", "/", "21"}], "*", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"2", "EulerGamma"}], "+", 
+            RowBox[{"Log", "[", 
+             RowBox[{"16", "x0"}], "]"}], "+", 
+            RowBox[{"Log", "[", 
+             FractionBox["x", "x0"], "]"}]}], ")"}]}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "15737765635"}], "/", "12192768"}], "+", 
+            RowBox[{
+             RowBox[{"2255", "/", "48"}], "*", 
+             RowBox[{"\[Pi]", "^", "2"}]}]}], ")"}], "*", "\[Nu]"}], "+", 
+         RowBox[{
+          RowBox[{"76055", "/", "6912"}], "*", 
+          RowBox[{"\[Nu]", "^", "2"}]}], "-", 
+         RowBox[{
+          RowBox[{"127825", "/", "5184"}], "*", 
+          RowBox[{"\[Nu]", "^", "3"}]}]}], ")"}]}], "+", 
+      RowBox[{"\[Pi]", "*", 
+       RowBox[{"x", "^", 
+        RowBox[{"(", 
+         RowBox[{"7", "/", "2"}], ")"}]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"77096675", "/", "2032128"}], "+", 
+         RowBox[{
+          RowBox[{"378515", "/", "12096"}], "*", "\[Nu]"}], "-", 
+         RowBox[{
+          RowBox[{"74045", "/", "6048"}], "*", 
+          RowBox[{"\[Nu]", "^", "2"}]}]}], ")"}]}]}], ")"}]}], "-", 
+   RowBox[{"3", 
+    RowBox[{"x", "^", 
+     RowBox[{"(", 
+      RowBox[{"3", "/", "2"}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{
+       RowBox[{"\[Nu]", "/", "2"}], "*", "x"}]}], ")"}], "*", 
+    RowBox[{"Log", "[", 
+     RowBox[{"x", "/", "x0"}], "]"}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"03c5d575-efa3-4ea7-8959-3c5c48136b40"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dxdt", "[", "x_", "]"}], ":=", 
+  RowBox[{"64", "*", 
+   RowBox[{"\[Nu]", "/", 
+    RowBox[{"(", 
+     RowBox[{"5", "M"}], ")"}]}], "*", 
+   RowBox[{"x", "^", "5"}], 
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     RowBox[{"x", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "743"}], "/", "336"}], "-", 
+        RowBox[{
+         RowBox[{"11", "/", "4"}], "\[Nu]"}]}], ")"}]}], "+", 
+     RowBox[{"4", "*", "\[Pi]", "*", 
+      RowBox[{"x", "^", 
+       RowBox[{"(", 
+        RowBox[{"3", "/", "2"}], ")"}]}]}], "+", 
+     RowBox[{
+      RowBox[{"x", "^", 
+       RowBox[{"(", "2", ")"}]}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"34103", "/", "18144"}], "+", 
+        RowBox[{
+         RowBox[{"13661", "/", "2016"}], "*", "\[Nu]"}], "+", 
+        RowBox[{
+         RowBox[{"59", "/", "18"}], "*", 
+         RowBox[{"\[Nu]", "^", "2"}]}]}], ")"}]}], "+", 
+     RowBox[{"\[Pi]", "*", 
+      RowBox[{"x", "^", 
+       RowBox[{"(", 
+        RowBox[{"5", "/", "2"}], ")"}]}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "4159"}], "/", "672"}], "-", 
+        RowBox[{
+         RowBox[{"189", "/", "8"}], "*", "\[Nu]"}]}], ")"}]}], "+", 
+     RowBox[{
+      RowBox[{"x", "^", 
+       RowBox[{"(", "3", ")"}]}], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"16447322263", "/", "139708800"}], "+", 
+        RowBox[{
+         RowBox[{"16", "/", "3"}], "*", 
+         RowBox[{"\[Pi]", "^", "2"}]}], "-", 
+        RowBox[{
+         RowBox[{"856", "/", "105"}], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"2", "*", "EulerGamma"}], "+", 
+           RowBox[{"Log", "[", 
+            RowBox[{"16", " ", "x0"}], "]"}], "+", 
+           RowBox[{"Log", "[", 
+            FractionBox["x", "x0"], "]"}]}], ")"}]}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "56198689"}], "/", "217728"}], "+", 
+           RowBox[{
+            RowBox[{"451", "/", "48"}], "*", 
+            RowBox[{"\[Pi]", "^", "2"}]}]}], ")"}], "*", "\[Nu]"}], "+", 
+        RowBox[{
+         RowBox[{"541", "/", "896"}], "*", 
+         RowBox[{"\[Nu]", "^", "2"}]}], "-", 
+        RowBox[{
+         RowBox[{"5605", "/", "2592"}], "*", 
+         RowBox[{"\[Nu]", "^", "3"}]}]}], ")"}]}], "+", 
+     RowBox[{"\[Pi]", "*", 
+      RowBox[{"x", "^", 
+       RowBox[{"(", 
+        RowBox[{"7", "/", "2"}], ")"}]}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "4415"}], "/", "4032"}], "+", 
+        RowBox[{
+         RowBox[{"358675", "/", "6048"}], "*", "\[Nu]"}], "+", 
+        RowBox[{
+         RowBox[{"91495", "/", "1512"}], "*", 
+         RowBox[{"\[Nu]", "^", "2"}]}]}], ")"}]}]}], ")"}]}]}]], "Input",
+ CellLabel->"In[2]:=",ExpressionUUID->"5f201d75-e91c-42f2-ab1b-7b65135ead0f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"\[Psi]Series", "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"\[Psi]", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"xdotSeries", "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"dxdt", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "9"}], "}"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"571b6002-9f7b-4a10-b6d5-7cfe1c49bf2c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     RowBox[{"32", " ", "\[Nu]", " ", 
+      SuperscriptBox["x", 
+       RowBox[{"5", "/", "2"}]]}]]}], "-", 
+   FractionBox[
+    RowBox[{"5", " ", 
+     RowBox[{"(", 
+      RowBox[{"743", "+", 
+       RowBox[{"924", " ", "\[Nu]"}]}], ")"}]}], 
+    RowBox[{"32256", " ", "\[Nu]", " ", 
+     SuperscriptBox["x", 
+      RowBox[{"3", "/", "2"}]]}]], "+", 
+   FractionBox[
+    RowBox[{"5", " ", "\[Pi]"}], 
+    RowBox[{"16", " ", "\[Nu]", " ", "x"}]], "-", 
+   FractionBox[
+    RowBox[{"5", " ", 
+     RowBox[{"(", 
+      RowBox[{"3058673", "+", 
+       RowBox[{"5472432", " ", "\[Nu]"}], "+", 
+       RowBox[{"4353552", " ", 
+        SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], 
+    RowBox[{"32514048", " ", "\[Nu]", " ", 
+     SqrtBox["x"]}]], "+", 
+   FractionBox[
+    RowBox[{"\[Pi]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "38645"}], "+", 
+       RowBox[{"5824", " ", "\[Nu]"}]}], ")"}], " ", 
+     RowBox[{"Log", "[", 
+      FractionBox["x", "x0"], "]"}]}], 
+    RowBox[{"43008", " ", "\[Nu]"}]], "+", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"600859607040", " ", "\[Nu]"}]], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "12348611926451"}], "+", 
+       RowBox[{"1530761379840", " ", "EulerGamma"}], "+", 
+       RowBox[{"1001432678400", " ", 
+        SuperscriptBox["\[Pi]", "2"]}], "+", 
+       RowBox[{"24236159077900", " ", "\[Nu]"}], "-", 
+       RowBox[{"882121363200", " ", 
+        SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "-", 
+       RowBox[{"206607970800", " ", 
+        SuperscriptBox["\[Nu]", "2"]}], "+", 
+       RowBox[{"462992376000", " ", 
+        SuperscriptBox["\[Nu]", "3"]}], "+", 
+       RowBox[{"765380689920", " ", 
+        RowBox[{"Log", "[", 
+         FractionBox["x", "x0"], "]"}]}], "+", 
+       RowBox[{"765380689920", " ", 
+        RowBox[{"Log", "[", 
+         RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}], " ", 
+     SqrtBox["x"]}]}], "+", 
+   FractionBox[
+    RowBox[{"5", " ", "\[Pi]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "15419335"}], "-", 
+       RowBox[{"12718104", " ", "\[Nu]"}], "+", 
+       RowBox[{"4975824", " ", 
+        SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", "x"}], 
+    RowBox[{"65028096", " ", "\[Nu]"}]], "-", 
+   RowBox[{"3", " ", 
+    RowBox[{"Log", "[", 
+     FractionBox["x", "x0"], "]"}], " ", 
+    SuperscriptBox["x", 
+     RowBox[{"3", "/", "2"}]]}], "+", 
+   RowBox[{
+    FractionBox["3", "2"], " ", "\[Nu]", " ", 
+    RowBox[{"Log", "[", 
+     FractionBox["x", "x0"], "]"}], " ", 
+    SuperscriptBox["x", 
+     RowBox[{"5", "/", "2"}]]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], 
+     RowBox[{"7", "/", "2"}]],
+    SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+   Rational[-1, 32]/$CellContext`\[Nu], 0, 
+    Rational[-5, 32256] $CellContext`\[Nu]^(-1) (743 + 
+     924 $CellContext`\[Nu]), Rational[5, 16] Pi/$CellContext`\[Nu], 
+    Rational[-5, 32514048] $CellContext`\[Nu]^(-1) (3058673 + 
+     5472432 $CellContext`\[Nu] + 4353552 $CellContext`\[Nu]^2), 
+    Rational[1, 43008] 
+    Pi $CellContext`\[Nu]^(-1) (-38645 + 5824 $CellContext`\[Nu]) 
+    Log[$CellContext`x/$CellContext`x0], 
+    Rational[1, 600859607040] $CellContext`\[Nu]^(-1) (-12348611926451 + 
+     1530761379840 EulerGamma + 1001432678400 Pi^2 + 
+     24236159077900 $CellContext`\[Nu] - 882121363200 Pi^2 $CellContext`\[Nu] - 
+     206607970800 $CellContext`\[Nu]^2 + 462992376000 $CellContext`\[Nu]^3 + 
+     765380689920 Log[$CellContext`x/$CellContext`x0] + 
+     765380689920 Log[16 $CellContext`x0]), Rational[5, 65028096] 
+    Pi $CellContext`\[Nu]^(-1) (-15419335 - 12718104 $CellContext`\[Nu] + 
+     4975824 $CellContext`\[Nu]^2), (-3) Log[$CellContext`x/$CellContext`x0], 
+    0, Rational[3, 2] $CellContext`\[Nu] 
+    Log[$CellContext`x/$CellContext`x0]}, -5, 7, 2],
+  Editable->False]], "Output",
+ CellLabel->"Out[3]=",ExpressionUUID->"580594b6-e39a-4720-9ba4-99f80e06bcb5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{"64", " ", "\[Nu]", " ", 
+     SuperscriptBox["x", "5"]}], 
+    RowBox[{"5", " ", "M"}]], "-", 
+   FractionBox[
+    RowBox[{"4", " ", 
+     RowBox[{"(", 
+      RowBox[{"\[Nu]", " ", 
+       RowBox[{"(", 
+        RowBox[{"743", "+", 
+         RowBox[{"924", " ", "\[Nu]"}]}], ")"}]}], ")"}], " ", 
+     SuperscriptBox["x", "6"]}], 
+    RowBox[{"105", " ", "M"}]], "+", 
+   FractionBox[
+    RowBox[{"256", " ", "\[Pi]", " ", "\[Nu]", " ", 
+     SuperscriptBox["x", 
+      RowBox[{"13", "/", "2"}]]}], 
+    RowBox[{"5", " ", "M"}]], "+", 
+   FractionBox[
+    RowBox[{"2", " ", "\[Nu]", " ", 
+     RowBox[{"(", 
+      RowBox[{"34103", "+", 
+       RowBox[{"122949", " ", "\[Nu]"}], "+", 
+       RowBox[{"59472", " ", 
+        SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", 
+     SuperscriptBox["x", "7"]}], 
+    RowBox[{"2835", " ", "M"}]], "-", 
+   FractionBox[
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{"\[Pi]", " ", "\[Nu]", " ", 
+       RowBox[{"(", 
+        RowBox[{"4159", "+", 
+         RowBox[{"15876", " ", "\[Nu]"}]}], ")"}]}], ")"}], " ", 
+     SuperscriptBox["x", 
+      RowBox[{"15", "/", "2"}]]}], 
+    RowBox[{"105", " ", "M"}]], "-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"\[Nu]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "49341966789"}], "+", 
+         RowBox[{"6833756160", " ", "EulerGamma"}], "-", 
+         RowBox[{"2235340800", " ", 
+          SuperscriptBox["\[Pi]", "2"]}], "+", 
+         RowBox[{"108182476325", " ", "\[Nu]"}], "-", 
+         RowBox[{"3938041800", " ", 
+          SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "-", 
+         RowBox[{"253066275", " ", 
+          SuperscriptBox["\[Nu]", "2"]}], "+", 
+         RowBox[{"906328500", " ", 
+          SuperscriptBox["\[Nu]", "3"]}], "+", 
+         RowBox[{"3416878080", " ", 
+          RowBox[{"Log", "[", 
+           FractionBox["x", "x0"], "]"}]}], "+", 
+         RowBox[{"3416878080", " ", 
+          RowBox[{"Log", "[", 
+           RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}]}], ")"}], " ", 
+     SuperscriptBox["x", "8"]}], 
+    RowBox[{"32744250", " ", "M"}]], "+", 
+   FractionBox[
+    RowBox[{"\[Pi]", " ", "\[Nu]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "2649"}], "+", 
+       RowBox[{"143470", " ", "\[Nu]"}], "+", 
+       RowBox[{"146392", " ", 
+        SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", 
+     SuperscriptBox["x", 
+      RowBox[{"17", "/", "2"}]]}], 
+    RowBox[{"189", " ", "M"}]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "10"],
+    SeriesData[$CellContext`x, 0, {}, 10, 20, 2],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+   Rational[64, 5] $CellContext`M^(-1) $CellContext`\[Nu], 0, 
+    Rational[-4, 105] $CellContext`M^(-1) $CellContext`\[Nu] (743 + 
+     924 $CellContext`\[Nu]), Rational[256, 5] $CellContext`M^(-1) 
+    Pi $CellContext`\[Nu], 
+    Rational[2, 2835] $CellContext`M^(-1) $CellContext`\[Nu] (34103 + 
+     122949 $CellContext`\[Nu] + 59472 $CellContext`\[Nu]^2), 
+    Rational[-2, 105] $CellContext`M^(-1) 
+    Pi $CellContext`\[Nu] (4159 + 15876 $CellContext`\[Nu]), 
+    Rational[-1, 
+      32744250] $CellContext`M^(-1) $CellContext`\[Nu] (-49341966789 + 
+     6833756160 EulerGamma - 2235340800 Pi^2 + 
+     108182476325 $CellContext`\[Nu] - 3938041800 Pi^2 $CellContext`\[Nu] - 
+     253066275 $CellContext`\[Nu]^2 + 906328500 $CellContext`\[Nu]^3 + 
+     3416878080 Log[$CellContext`x/$CellContext`x0] + 
+     3416878080 Log[16 $CellContext`x0]), 
+    Rational[1, 189] $CellContext`M^(-1) 
+    Pi $CellContext`\[Nu] (-2649 + 143470 $CellContext`\[Nu] + 
+     146392 $CellContext`\[Nu]^2)}, 10, 20, 2],
+  Editable->False]], "Output",
+ CellLabel->"Out[4]=",ExpressionUUID->"cbc5c804-d896-4598-90af-6e35b2260eb7"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["2. Integration method", \
+"Subsection",ExpressionUUID->"255e2a59-d35e-4d2d-91a4-cb49b828a97f"],
+
+Cell["To integrate by parts, note:", \
+"Text",ExpressionUUID->"85d32b86-b023-46d8-88cc-e160e29f3c69"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"\[Phi]", "[", "x", "]"}], "]"}], 
+    FractionBox[
+     RowBox[{"f", "[", "x", "]"}], 
+     RowBox[{
+      RowBox[{"\[Phi]", "'"}], "[", "x", "]"}]]}], ",", "x"}], "]"}]], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"2fa4b51f-854a-4fd9-bb60-d1c96aaf64df"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"\[Phi]", "[", "x", "]"}]], " ", 
+   RowBox[{"f", "[", "x", "]"}]}], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[Phi]", "[", "x", "]"}]], " ", 
+    RowBox[{
+     SuperscriptBox["f", "\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]}], 
+   RowBox[{
+    SuperscriptBox["\[Phi]", "\[Prime]",
+     MultilineFunction->None], "[", "x", "]"}]], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[Phi]", "[", "x", "]"}]], " ", 
+    RowBox[{"f", "[", "x", "]"}], " ", 
+    RowBox[{
+     SuperscriptBox["\[Phi]", "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]}], 
+   SuperscriptBox[
+    RowBox[{
+     SuperscriptBox["\[Phi]", "\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}], "2"]]}]], "Output",
+ CellLabel->"Out[5]=",ExpressionUUID->"0a2fb277-d42e-4b99-838f-edeaa1e043df"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Rearranging the above and using the FTOC, we will have\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     UnderoverscriptBox["\[Integral]", "a", "b"], 
+     RowBox[{
+      SuperscriptBox["e", "\[Phi]"], "f", " ", "dx"}]}], " ", "=", " ", 
+    RowBox[{
+     SubsuperscriptBox[
+      RowBox[{"[", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["e", "\[Phi]"], "f"}], 
+        RowBox[{"\[Phi]", "'"}]], "]"}], "a", "b"], "-", 
+     RowBox[{
+      UnderoverscriptBox["\[Integral]", "a", "b"], 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["e", "\[Phi]"], "(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"f", "'"}], 
+          RowBox[{"\[Phi]", "'"}]], "-", 
+         FractionBox[
+          RowBox[{"f", " ", 
+           RowBox[{"\[Phi]", "''"}]}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"\[Phi]", "'"}], ")"}], "2"]]}], ")"}], "dx"}]}]}]}], 
+   TraditionalForm]],ExpressionUUID->"15884474-3206-4cff-a6da-59a07162b6fe"],
+ ".\nThe idea is that the integral on the RHS has been pushed to higher PN \
+order than the one on the LHS. The rule:"
+}], "Text",ExpressionUUID->"3222df1f-5e80-4da3-a78a-2bbd01e0164c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IBPRule", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Int", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Exp", "[", "\[Phi]Ser_SeriesData", "]"}], "f_"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}], ":>", 
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\[Phi]prime", "=", 
+          RowBox[{"D", "[", 
+           RowBox[{"\[Phi]Ser", ",", "x"}], "]"}]}], ",", 
+         RowBox[{"\[Phi]primeprime", "=", 
+          RowBox[{"D", "[", 
+           RowBox[{"\[Phi]Ser", ",", "x", ",", "x"}], "]"}]}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Exp", "[", "\[Phi]Ser", "]"}], 
+         FractionBox["f", "\[Phi]prime"]}], "-", 
+        RowBox[{"Int", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Exp", "[", "\[Phi]Ser", "]"}], 
+           RowBox[{"(", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"D", "[", 
+               RowBox[{"f", ",", "x"}], "]"}], "\[Phi]prime"], "-", 
+             FractionBox[
+              RowBox[{"f", " ", "\[Phi]primeprime"}], 
+              SuperscriptBox["\[Phi]prime", "2"]]}], ")"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}]}]}], "]"}]}], 
+    "}"}]}], ";"}]], "Input",
+ CellLabel->"In[6]:=",ExpressionUUID->"ff21951c-1757-461c-96d0-9b198b4900c9"],
+
+Cell["Let\[CloseCurlyQuote]s demonstrate with the leading order expressions", \
+"Text",ExpressionUUID->"38883254-ff33-49bd-85f5-f61efea94fdb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SeriesToLeadingRule", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Verbatim", "[", "SeriesData", "]"}], "[", 
+      RowBox[{
+      "x_", ",", "x0_", ",", "as__", ",", "nmin_", ",", "nmax_", ",", 
+       "den_"}], "]"}], ":>", 
+     RowBox[{"SeriesData", "[", 
+      RowBox[{"x", ",", "x0", ",", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"as", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "}"}], ",", 
+         RowBox[{"Array", "[", 
+          RowBox[{
+           RowBox[{"0", "&"}], ",", 
+           RowBox[{
+            RowBox[{"Length", "[", "as", "]"}], "-", "1"}]}], "]"}]}], "]"}], 
+       ",", "nmin", ",", "nmax", ",", "den"}], "]"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[7]:=",ExpressionUUID->"f4123203-8a28-4829-a014-ac2be09cd94a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Int", "[", 
+   RowBox[{
+    RowBox[{"xdotSeries", " ", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]Series"}], "]"}]}], ",", 
+    
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}], "/.", 
+  "SeriesToLeadingRule"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "/.", "IBPRule"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", "/.", "IBPRule"}], "//", "Simplify"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", "/.", "IBPRule"}], "//", "Simplify"}]}], "Input",
+ CellLabel->"In[8]:=",ExpressionUUID->"015534ab-127b-4226-80a7-5e39d8e09b3c"],
+
+Cell[BoxData[
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     InterpretationBox[
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"\[ImaginaryI]", " ", "m"}], 
+         RowBox[{"32", " ", "\[Nu]", " ", 
+          SuperscriptBox["x", 
+           RowBox[{"5", "/", "2"}]]}]]}], "+", 
+       InterpretationBox[
+        SuperscriptBox[
+         RowBox[{"O", "[", "x", "]"}], 
+         RowBox[{"7", "/", "2"}]],
+        SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+        Editable->False]}],
+      SeriesData[$CellContext`x, 0, {Complex[0, 
+          Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+      Editable->False]], " ", 
+    RowBox[{"(", 
+     InterpretationBox[
+      RowBox[{
+       FractionBox[
+        RowBox[{"64", " ", "\[Nu]", " ", 
+         SuperscriptBox["x", "5"]}], 
+        RowBox[{"5", " ", "M"}]], "+", 
+       InterpretationBox[
+        SuperscriptBox[
+         RowBox[{"O", "[", "x", "]"}], "10"],
+        SeriesData[$CellContext`x, 0, {}, 10, 20, 2],
+        Editable->False]}],
+      SeriesData[$CellContext`x, 0, {
+       Rational[64, 5] $CellContext`M^(-1) $CellContext`\[Nu]}, 10, 20, 2],
+      Editable->False], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}]], "Output",
+ CellLabel->"Out[8]=",ExpressionUUID->"0b1b7aae-97a6-4268-a7f5-c937d644dfe6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"Int", "[", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       InterpretationBox[
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", "m"}], 
+           RowBox[{"32", " ", "\[Nu]", " ", 
+            SuperscriptBox["x", 
+             RowBox[{"5", "/", "2"}]]}]]}], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", "x", "]"}], 
+           RowBox[{"7", "/", "2"}]],
+          SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+          Editable->False]}],
+        SeriesData[$CellContext`x, 0, {Complex[0, 
+            Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       InterpretationBox[
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"34816", " ", "\[ImaginaryI]", " ", 
+            SuperscriptBox["\[Nu]", "2"], " ", 
+            SuperscriptBox["x", 
+             RowBox[{"15", "/", "2"}]]}], 
+           RowBox[{"25", " ", "m", " ", "M"}]]}], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", "x", "]"}], 
+           RowBox[{"25", "/", "2"}]],
+          SeriesData[$CellContext`x, 0, {}, 15, 25, 2],
+          Editable->False]}],
+        SeriesData[$CellContext`x, 0, {Complex[0, 
+            
+            Rational[-34816, 
+             25]] $CellContext`m^(-1) $CellContext`M^(-1) \
+$CellContext`\[Nu]^2}, 15, 25, 2],
+        Editable->False], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}]}], "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    InterpretationBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", "m"}], 
+        RowBox[{"32", " ", "\[Nu]", " ", 
+         SuperscriptBox["x", 
+          RowBox[{"5", "/", "2"}]]}]]}], "+", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "x", "]"}], 
+        RowBox[{"7", "/", "2"}]],
+       SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+       Editable->False]}],
+     SeriesData[$CellContext`x, 0, {Complex[0, 
+         Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+     Editable->False]], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"4096", " ", "\[ImaginaryI]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         SuperscriptBox["x", 
+          RowBox[{"17", "/", "2"}]]}], 
+        RowBox[{"25", " ", "m", " ", "M"}]]}], "+", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "x", "]"}], 
+        RowBox[{"27", "/", "2"}]],
+       SeriesData[$CellContext`x, 0, {}, 17, 27, 2],
+       Editable->False]}],
+     SeriesData[$CellContext`x, 0, {Complex[0, 
+         Rational[-4096, 
+          25]] $CellContext`m^(-1) $CellContext`M^(-1) $CellContext`\[Nu]^2}, 
+      17, 27, 2],
+     Editable->False], ")"}]}]}]], "Output",
+ CellLabel->"Out[9]=",ExpressionUUID->"434b4c3d-e857-4fd3-a85d-a23756400c50"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Int", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      InterpretationBox[
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"\[ImaginaryI]", " ", "m"}], 
+          RowBox[{"32", " ", "\[Nu]", " ", 
+           SuperscriptBox["x", 
+            RowBox[{"5", "/", "2"}]]}]]}], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "x", "]"}], 
+          RowBox[{"7", "/", "2"}]],
+         SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+         Editable->False]}],
+       SeriesData[$CellContext`x, 0, {Complex[0, 
+           Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+       Editable->False]], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"24510464", " ", 
+           SuperscriptBox["\[Nu]", "3"], " ", 
+           SuperscriptBox["x", "10"]}], 
+          RowBox[{"125", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["m", "2"], " ", "M"}], ")"}]}]]}], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "x", "]"}], "15"],
+         SeriesData[$CellContext`x, 0, {}, 20, 30, 2],
+         Editable->False]}],
+       SeriesData[$CellContext`x, 0, {
+        Rational[-24510464, 
+           125] $CellContext`m^(-2) $CellContext`M^(-1) $CellContext`\[Nu]^3},
+         20, 30, 2],
+       Editable->False], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}], "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    InterpretationBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", "m"}], 
+        RowBox[{"32", " ", "\[Nu]", " ", 
+         SuperscriptBox["x", 
+          RowBox[{"5", "/", "2"}]]}]]}], "+", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "x", "]"}], 
+        RowBox[{"7", "/", "2"}]],
+       SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+       Editable->False]}],
+     SeriesData[$CellContext`x, 0, {Complex[0, 
+         Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+     Editable->False]], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"4096", " ", "\[ImaginaryI]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         SuperscriptBox["x", 
+          RowBox[{"17", "/", "2"}]]}], 
+        RowBox[{"25", " ", "m", " ", "M"}]]}], "+", 
+      FractionBox[
+       RowBox[{"2228224", " ", 
+        SuperscriptBox["\[Nu]", "3"], " ", 
+        SuperscriptBox["x", "11"]}], 
+       RowBox[{"125", " ", 
+        SuperscriptBox["m", "2"], " ", "M"}]], "+", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "x", "]"}], 
+        RowBox[{"27", "/", "2"}]],
+       SeriesData[$CellContext`x, 0, {}, 17, 27, 2],
+       Editable->False]}],
+     SeriesData[$CellContext`x, 0, {Complex[0, 
+         Rational[-4096, 
+          25]] $CellContext`m^(-1) $CellContext`M^(-1) $CellContext`\[Nu]^2, 
+       0, 0, 0, 0, 
+       Rational[
+        2228224, 
+         125] $CellContext`m^(-2) $CellContext`M^(-1) $CellContext`\[Nu]^3}, 
+      17, 27, 2],
+     Editable->False], ")"}]}]}]], "Output",
+ CellLabel->"Out[10]=",ExpressionUUID->"00468914-cdb5-4be3-adfc-895cf43b4cae"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"Int", "[", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       InterpretationBox[
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", "m"}], 
+           RowBox[{"32", " ", "\[Nu]", " ", 
+            SuperscriptBox["x", 
+             RowBox[{"5", "/", "2"}]]}]]}], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", "x", "]"}], 
+           RowBox[{"7", "/", "2"}]],
+          SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+          Editable->False]}],
+        SeriesData[$CellContext`x, 0, {Complex[0, 
+            Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+        Editable->False]], " ", 
+      RowBox[{"(", 
+       InterpretationBox[
+        RowBox[{
+         FractionBox[
+          RowBox[{"21177040896", " ", "\[ImaginaryI]", " ", 
+           SuperscriptBox["\[Nu]", "4"], " ", 
+           SuperscriptBox["x", 
+            RowBox[{"25", "/", "2"}]]}], 
+          RowBox[{"625", " ", 
+           SuperscriptBox["m", "3"], " ", "M"}]], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", "x", "]"}], 
+           RowBox[{"35", "/", "2"}]],
+          SeriesData[$CellContext`x, 0, {}, 25, 35, 2],
+          Editable->False]}],
+        SeriesData[$CellContext`x, 0, {Complex[0, 
+            Rational[
+            21177040896, 
+             625]] $CellContext`m^(-3) $CellContext`M^(-1) \
+$CellContext`\[Nu]^4}, 25, 35, 2],
+        Editable->False], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}]}], "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    InterpretationBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", "m"}], 
+        RowBox[{"32", " ", "\[Nu]", " ", 
+         SuperscriptBox["x", 
+          RowBox[{"5", "/", "2"}]]}]]}], "+", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "x", "]"}], 
+        RowBox[{"7", "/", "2"}]],
+       SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+       Editable->False]}],
+     SeriesData[$CellContext`x, 0, {Complex[0, 
+         Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu]}, -5, 7, 2],
+     Editable->False]], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"4096", " ", "\[ImaginaryI]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         SuperscriptBox["x", 
+          RowBox[{"17", "/", "2"}]]}], 
+        RowBox[{"25", " ", "m", " ", "M"}]]}], "+", 
+      FractionBox[
+       RowBox[{"2228224", " ", 
+        SuperscriptBox["\[Nu]", "3"], " ", 
+        SuperscriptBox["x", "11"]}], 
+       RowBox[{"125", " ", 
+        SuperscriptBox["m", "2"], " ", "M"}]], "+", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "x", "]"}], 
+        RowBox[{"27", "/", "2"}]],
+       SeriesData[$CellContext`x, 0, {}, 17, 27, 2],
+       Editable->False]}],
+     SeriesData[$CellContext`x, 0, {Complex[0, 
+         Rational[-4096, 
+          25]] $CellContext`m^(-1) $CellContext`M^(-1) $CellContext`\[Nu]^2, 
+       0, 0, 0, 0, 
+       Rational[
+        2228224, 
+         125] $CellContext`m^(-2) $CellContext`M^(-1) $CellContext`\[Nu]^3}, 
+      17, 27, 2],
+     Editable->False], ")"}]}]}]], "Output",
+ CellLabel->
+  "Out[11]=",ExpressionUUID->"8ddde792-16fc-496d-91fc-387057aedc18"]
+}, Open  ]],
+
+Cell["\<\
+Perfect! Now we just need to repeatedly apply the rule and simplify, and test \
+for equality of the stuff outside of the integral. Use FixedPoint.\
+\>", "Text",ExpressionUUID->"4ad8e6f3-79b3-4550-a728-7586f7fe2725"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IBPUntilFixed", "[", "expr_", "]"}], ":=", 
+  RowBox[{"FixedPoint", "[", 
+   RowBox[{
+    RowBox[{"Simplify", "@*", 
+     RowBox[{"ReplaceAll", "[", "IBPRule", "]"}]}], ",", "expr", ",", 
+    RowBox[{"SameTest", ":>", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Simplify", "[", 
+        RowBox[{
+         RowBox[{"0", "==", 
+          RowBox[{"#1", "-", "#2"}]}], "/.", 
+         RowBox[{
+          RowBox[{"Int", "[", "__", "]"}], "->", "0"}]}], "]"}], "&"}], 
+      ")"}]}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[12]:=",ExpressionUUID->"1a298a34-5126-4439-99c3-c4105ca8684c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["3. Main result", \
+"Subsection",ExpressionUUID->"818cc4b7-a49c-4f63-b778-3e6253b08dea"],
+
+Cell[TextData[{
+ "Compute the integral:\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["J", 
+     RowBox[{"m", ",", "k"}]], "=", 
+    RowBox[{
+     UnderoverscriptBox["\[Integral]", "0", "x"], 
+     RowBox[{
+      SuperscriptBox["e", 
+       RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]"}]], 
+      SuperscriptBox["x", "k"], 
+      FractionBox["dx", "dt"], "dx"}]}]}], TraditionalForm]],ExpressionUUID->
+  "94da4877-7fa5-4602-a85b-ca344be2509d"],
+ "."
+}], "Text",ExpressionUUID->"d99318d6-c51b-49e4-8f97-20521018df76"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"integrand", "=", 
+   RowBox[{"xdotSeries", " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]Series"}], "]"}], 
+    SuperscriptBox["x", "k"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Int", "[", 
+   RowBox[{"integrand", ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "x"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"integral", "=", 
+   RowBox[{
+    RowBox[{"IBPUntilFixed", "@", "%"}], "/.", 
+    RowBox[{
+     RowBox[{"Int", "[", "__", "]"}], "->", "0"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"integralDummy\[Psi]", "=", 
+   RowBox[{"integral", "/.", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]Series"}], "]"}], "->", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"integralLeading", "=", 
+  RowBox[{
+   RowBox[{"integralDummy\[Psi]", "/.", "SeriesToLeadingRule"}], "//", 
+   "Normal"}]}], "\[IndentingNewLine]", 
+ RowBox[{"integralSubLeading", "=", 
+  FractionBox["integralDummy\[Psi]", "integralLeading"]}]}], "Input",
+ CellLabel->"In[13]:=",ExpressionUUID->"cbcff4ad-0897-4a37-bbd5-db29059aa2ca"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"4096", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]"}]], " ", 
+    SuperscriptBox["x", 
+     RowBox[{
+      FractionBox["17", "2"], "+", "k"}]], " ", 
+    SuperscriptBox["\[Nu]", "2"]}], 
+   RowBox[{"25", " ", "m", " ", "M"}]]}]], "Output",
+ CellLabel->"Out[17]=",ExpressionUUID->"cae29ed9-01a3-4b22-a6b1-b34bd4a2fc0b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"1", "+", 
+   RowBox[{
+    FractionBox["1", "168"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "743"}], "-", 
+      RowBox[{"924", " ", "\[Nu]"}]}], ")"}], " ", "x"}], "+", 
+   RowBox[{"8", " ", "\[Pi]", " ", 
+    SuperscriptBox["x", 
+     RowBox[{"3", "/", "2"}]]}], "+", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"8787977", "+", 
+       RowBox[{"26127864", " ", "\[Nu]"}], "+", 
+       RowBox[{"14344848", " ", 
+        SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", 
+     SuperscriptBox["x", "2"]}], "1016064"], "+", 
+   FractionBox[
+    RowBox[{"25", " ", "\[ImaginaryI]", " ", "m", " ", "M", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"131072", " ", 
+         RowBox[{"(", 
+          RowBox[{"17", "+", 
+           RowBox[{"2", " ", "k"}]}], ")"}], " ", 
+         SuperscriptBox["\[Nu]", "3"]}], 
+        RowBox[{"125", " ", 
+         SuperscriptBox["m", "2"], " ", "M"}]], "+", 
+       FractionBox[
+        RowBox[{"256", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"50515", "+", 
+           RowBox[{"116522", " ", "\[Nu]"}]}], ")"}]}], 
+        RowBox[{"2625", " ", "m", " ", "M"}]]}], ")"}], " ", 
+     SuperscriptBox["x", 
+      RowBox[{"5", "/", "2"}]]}], 
+    RowBox[{"4096", " ", 
+     SuperscriptBox["\[Nu]", "2"]}]], "+", 
+   RowBox[{
+    FractionBox["1", "838252800"], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"190399771681", "-", 
+       RowBox[{"27335024640", " ", "EulerGamma"}], "+", 
+       RowBox[{"22353408000", " ", 
+        SuperscriptBox["\[Pi]", "2"]}], "-", 
+       RowBox[{"466517032025", " ", "\[Nu]"}], "+", 
+       RowBox[{"15752167200", " ", 
+        SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "-", 
+       RowBox[{"42380692200", " ", 
+        SuperscriptBox["\[Nu]", "2"]}], "-", 
+       RowBox[{"18737149200", " ", 
+        SuperscriptBox["\[Nu]", "3"]}], "-", 
+       RowBox[{"13667512320", " ", 
+        RowBox[{"Log", "[", 
+         FractionBox["x", "x0"], "]"}]}], "-", 
+       RowBox[{"13667512320", " ", 
+        RowBox[{"Log", "[", 
+         RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}], " ", 
+     SuperscriptBox["x", "3"]}]}], "+", 
+   FractionBox[
+    RowBox[{"25", " ", "\[ImaginaryI]", " ", "m", " ", "M", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"8192", " ", 
+          RowBox[{"(", 
+           RowBox[{"55", "+", 
+            RowBox[{"6", " ", "k"}]}], ")"}], " ", 
+          SuperscriptBox["\[Nu]", "3"], " ", 
+          RowBox[{"(", 
+           RowBox[{"743", "+", 
+            RowBox[{"924", " ", "\[Nu]"}]}], ")"}]}], 
+         RowBox[{"2625", " ", 
+          SuperscriptBox["m", "2"], " ", "M"}]]}], "-", 
+       FractionBox[
+        RowBox[{"16", " ", "\[ImaginaryI]", " ", "\[Pi]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"204321085", "+", 
+           RowBox[{"1585376142", " ", "\[Nu]"}], "+", 
+           RowBox[{"1412728296", " ", 
+            SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], 
+        RowBox[{"496125", " ", "m", " ", "M"}]]}], ")"}], " ", 
+     SuperscriptBox["x", 
+      RowBox[{"7", "/", "2"}]]}], 
+    RowBox[{"4096", " ", 
+     SuperscriptBox["\[Nu]", "2"]}]], "+", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"4096", " ", 
+      SuperscriptBox["\[Nu]", "2"]}]], 
+    RowBox[{"25", " ", "\[ImaginaryI]", " ", "m", " ", "M", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"1572864", " ", 
+         RowBox[{"(", 
+          RowBox[{"19", "+", 
+           RowBox[{"2", " ", "k"}]}], ")"}], " ", "\[Pi]", " ", 
+         SuperscriptBox["\[Nu]", "3"]}], 
+        RowBox[{"125", " ", 
+         SuperscriptBox["m", "2"], " ", "M"}]], "-", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"1732825710000", " ", "m", " ", "M"}]], 
+        RowBox[{"\[ImaginaryI]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "294668575505223653"}], "+", 
+           RowBox[{"40944805387960320", " ", "EulerGamma"}], "-", 
+           RowBox[{"11372019137740800", " ", 
+            SuperscriptBox["\[Pi]", "2"]}], "+", 
+           RowBox[{"291969951167658456", " ", "\[Nu]"}], "+", 
+           RowBox[{"50919246538997760", " ", "EulerGamma", " ", "\[Nu]"}], 
+           "-", 
+           RowBox[{"110460804967941120", " ", 
+            SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "+", 
+           RowBox[{"804676149295048800", " ", 
+            SuperscriptBox["\[Nu]", "2"]}], "-", 
+           RowBox[{"29342885025484800", " ", 
+            SuperscriptBox["\[Pi]", "2"], " ", 
+            SuperscriptBox["\[Nu]", "2"]}], "+", 
+           RowBox[{"3393058960368000", " ", 
+            SuperscriptBox["\[Nu]", "3"]}], "+", 
+           RowBox[{"7978083597792000", " ", 
+            SuperscriptBox["\[Nu]", "4"]}], "+", 
+           RowBox[{"20472402693980160", " ", 
+            RowBox[{"Log", "[", 
+             FractionBox["x", "x0"], "]"}]}], "+", 
+           RowBox[{"41812618334699520", " ", "\[Nu]", " ", 
+            RowBox[{"Log", "[", 
+             FractionBox["x", "x0"], "]"}]}], "+", 
+           RowBox[{"20472402693980160", " ", 
+            RowBox[{"Log", "[", 
+             RowBox[{"16", " ", "x0"}], "]"}]}], "+", 
+           RowBox[{"25459623269498880", " ", "\[Nu]", " ", 
+            RowBox[{"Log", "[", 
+             RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}]}]}]}], ")"}], " ", 
+     SuperscriptBox["x", "4"]}]}], "+", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"4096", " ", 
+      SuperscriptBox["\[Nu]", "2"]}]], 
+    RowBox[{"25", " ", "\[ImaginaryI]", " ", "m", " ", "M", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"512", " ", 
+         RowBox[{"(", 
+          RowBox[{"59", "+", 
+           RowBox[{"6", " ", "k"}]}], ")"}], " ", 
+         SuperscriptBox["\[Nu]", "3"], " ", 
+         RowBox[{"(", 
+          RowBox[{"6878209", "+", 
+           RowBox[{"19242720", " ", "\[Nu]"}], "+", 
+           RowBox[{"11014416", " ", 
+            SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], 
+        RowBox[{"496125", " ", 
+         SuperscriptBox["m", "2"], " ", "M"}]], "-", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"1146048750", " ", "m", " ", "M"}]], 
+        RowBox[{"\[ImaginaryI]", " ", "\[Pi]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"350057020138927", "-", 
+           RowBox[{"48984364154880", " ", "EulerGamma"}], "+", 
+           RowBox[{"4005730713600", " ", 
+            SuperscriptBox["\[Pi]", "2"]}], "-", 
+           RowBox[{"859852668899840", " ", "\[Nu]"}], "+", 
+           RowBox[{"28227883622400", " ", 
+            SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "-", 
+           RowBox[{"203673264841200", " ", 
+            SuperscriptBox["\[Nu]", "2"]}], "-", 
+           RowBox[{"111522277426560", " ", 
+            SuperscriptBox["\[Nu]", "3"]}], "-", 
+           RowBox[{"24492182077440", " ", 
+            RowBox[{"Log", "[", 
+             FractionBox["x", "x0"], "]"}]}], "-", 
+           RowBox[{"24492182077440", " ", 
+            RowBox[{"Log", "[", 
+             RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}]}]}]}], ")"}], " ", 
+     SuperscriptBox["x", 
+      RowBox[{"9", "/", "2"}]]}]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "5"],
+    SeriesData[$CellContext`x, 0, {}, 0, 10, 2],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+   1, 0, Rational[1, 168] (-743 - 924 $CellContext`\[Nu]), 8 Pi, 
+    Rational[1, 1016064] (8787977 + 26127864 $CellContext`\[Nu] + 
+     14344848 $CellContext`\[Nu]^2), Complex[0, 
+      Rational[
+      25, 4096]] $CellContext`m $CellContext`M $CellContext`\[Nu]^(-2) (
+     Rational[131072, 125] (17 + 
+       2 $CellContext`k) $CellContext`m^(-2) $CellContext`M^(-1) \
+$CellContext`\[Nu]^3 + Complex[0, 
+        Rational[256, 2625]] $CellContext`m^(-1) $CellContext`M^(-1) 
+      Pi $CellContext`\[Nu]^2 (50515 + 116522 $CellContext`\[Nu])), 
+    Rational[1, 838252800] (190399771681 - 27335024640 EulerGamma + 
+     22353408000 Pi^2 - 466517032025 $CellContext`\[Nu] + 
+     15752167200 Pi^2 $CellContext`\[Nu] - 42380692200 $CellContext`\[Nu]^2 - 
+     18737149200 $CellContext`\[Nu]^3 - 13667512320 
+     Log[$CellContext`x/$CellContext`x0] - 13667512320 
+     Log[16 $CellContext`x0]), Complex[0, 
+      Rational[
+      25, 4096]] $CellContext`m $CellContext`M $CellContext`\[Nu]^(-2) (
+     Rational[-8192, 2625] (55 + 
+       6 $CellContext`k) $CellContext`m^(-2) $CellContext`M^(-1) \
+$CellContext`\[Nu]^3 (743 + 924 $CellContext`\[Nu]) + Complex[0, 
+        Rational[-16, 496125]] $CellContext`m^(-1) $CellContext`M^(-1) 
+      Pi $CellContext`\[Nu]^2 (204321085 + 1585376142 $CellContext`\[Nu] + 
+       1412728296 $CellContext`\[Nu]^2)), Complex[0, 
+      Rational[
+      25, 4096]] $CellContext`m $CellContext`M $CellContext`\[Nu]^(-2) (
+     Rational[1572864, 125] (19 + 
+       2 $CellContext`k) $CellContext`m^(-2) $CellContext`M^(-1) 
+      Pi $CellContext`\[Nu]^3 + Complex[0, 
+        Rational[-1, 
+         1732825710000]] $CellContext`m^(-1) $CellContext`M^(-1) \
+$CellContext`\[Nu]^2 (-294668575505223653 + 40944805387960320 EulerGamma - 
+       11372019137740800 Pi^2 + 291969951167658456 $CellContext`\[Nu] + 
+       50919246538997760 EulerGamma $CellContext`\[Nu] - 110460804967941120 
+       Pi^2 $CellContext`\[Nu] + 804676149295048800 $CellContext`\[Nu]^2 - 
+       29342885025484800 Pi^2 $CellContext`\[Nu]^2 + 
+       3393058960368000 $CellContext`\[Nu]^3 + 
+       7978083597792000 $CellContext`\[Nu]^4 + 
+       20472402693980160 Log[$CellContext`x/$CellContext`x0] + 
+       41812618334699520 $CellContext`\[Nu] 
+        Log[$CellContext`x/$CellContext`x0] + 
+       20472402693980160 Log[16 $CellContext`x0] + 
+       25459623269498880 $CellContext`\[Nu] Log[16 $CellContext`x0])), 
+    Complex[0, 
+      Rational[
+      25, 4096]] $CellContext`m $CellContext`M $CellContext`\[Nu]^(-2) (
+     Rational[512, 496125] (59 + 
+       6 $CellContext`k) $CellContext`m^(-2) $CellContext`M^(-1) \
+$CellContext`\[Nu]^3 (6878209 + 19242720 $CellContext`\[Nu] + 
+       11014416 $CellContext`\[Nu]^2) + Complex[0, 
+        Rational[-1, 1146048750]] $CellContext`m^(-1) $CellContext`M^(-1) 
+      Pi $CellContext`\[Nu]^2 (350057020138927 - 48984364154880 EulerGamma + 
+       4005730713600 Pi^2 - 859852668899840 $CellContext`\[Nu] + 
+       28227883622400 Pi^2 $CellContext`\[Nu] - 
+       203673264841200 $CellContext`\[Nu]^2 - 
+       111522277426560 $CellContext`\[Nu]^3 - 24492182077440 
+       Log[$CellContext`x/$CellContext`x0] - 24492182077440 
+       Log[16 $CellContext`x0]))}, 0, 10, 2],
+  Editable->False]], "Output",
+ CellLabel->
+  "Out[18]=",ExpressionUUID->"578155e3-b0d3-4b63-bfe7-50b7c68f312b"]
+}, Open  ]],
+
+Cell["\<\
+Unfortunately, the printing for SeriesData seems to override our attempt at \
+organizing the expression... trick it by wrapping in a head, just to preserve \
+the structure. Print normally.\
+\>", "Text",ExpressionUUID->"641e979a-20fd-4a93-bcc8-f210951ea384"],
+
+Cell[BoxData[
+ RowBox[{"IdHead", "/:", 
+  RowBox[{"MakeBoxes", "[", 
+   RowBox[{
+    RowBox[{"IdHead", "[", "expr_", "]"}], ",", "StandardForm"}], "]"}], ":=", 
+  RowBox[{"MakeBoxes", "[", 
+   RowBox[{"expr", ",", "StandardForm"}], "]"}]}]], "Input",
+ CellLabel->"In[19]:=",ExpressionUUID->"f38e4029-6e2a-470c-9c72-356c496188ec"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IdHead", "[", "0", "]"}], ":=", "0"}]], "Input",
+ CellLabel->"In[20]:=",ExpressionUUID->"fea45473-47cf-4c49-808e-82af388129b4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IdHead", "[", "integralLeading", "]"}], 
+  RowBox[{"MapAt", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Collect", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"{", 
+        RowBox[{"Log", "[", 
+         RowBox[{"x", "/", "x0"}], "]"}], "}"}], ",", 
+       RowBox[{"IdHead", "@*", "Simplify"}]}], "]"}], "&"}], ",", 
+    "integralSubLeading", ",", "3"}], "]"}]}]], "Input",
+ CellLabel->"In[21]:=",ExpressionUUID->"6b47bbba-a4ec-4e08-876b-ef1ee7322000"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"4096", " ", "\[ImaginaryI]", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Psi]"}]], " ", 
+     SuperscriptBox["x", 
+      RowBox[{
+       FractionBox["17", "2"], "+", "k"}]], " ", 
+     SuperscriptBox["\[Nu]", "2"]}], 
+    RowBox[{"25", " ", "m", " ", "M"}]]}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    RowBox[{"1", "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["743", "168"]}], "-", 
+        FractionBox[
+         RowBox[{"11", " ", "\[Nu]"}], "2"]}], ")"}], " ", "x"}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"8", " ", "\[Pi]"}], ")"}], " ", 
+      SuperscriptBox["x", 
+       RowBox[{"3", "/", "2"}]]}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"8787977", "+", 
+        RowBox[{"26127864", " ", "\[Nu]"}], "+", 
+        RowBox[{"14344848", " ", 
+         SuperscriptBox["\[Nu]", "2"]}]}], "1016064"], " ", 
+      SuperscriptBox["x", "2"]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"32", " ", "\[ImaginaryI]", " ", 
+          RowBox[{"(", 
+           RowBox[{"17", "+", 
+            RowBox[{"2", " ", "k"}]}], ")"}], " ", "\[Nu]"}], 
+         RowBox[{"5", " ", "m"}]], "-", 
+        FractionBox[
+         RowBox[{"\[Pi]", " ", 
+          RowBox[{"(", 
+           RowBox[{"50515", "+", 
+            RowBox[{"116522", " ", "\[Nu]"}]}], ")"}]}], "1680"]}], ")"}], 
+      " ", 
+      SuperscriptBox["x", 
+       RowBox[{"5", "/", "2"}]]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox["27199967383", "119750400"], "-", 
+          FractionBox[
+           RowBox[{"3424", " ", "EulerGamma"}], "105"], "+", 
+          FractionBox[
+           RowBox[{"80", " ", 
+            SuperscriptBox["\[Pi]", "2"]}], "3"], "-", 
+          FractionBox[
+           RowBox[{"1696425571", " ", "\[Nu]"}], "3048192"], "+", 
+          FractionBox[
+           RowBox[{"451", " ", 
+            SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "24"], "-", 
+          FractionBox[
+           RowBox[{"305777", " ", 
+            SuperscriptBox["\[Nu]", "2"]}], "6048"], "-", 
+          FractionBox[
+           RowBox[{"28969", " ", 
+            SuperscriptBox["\[Nu]", "3"]}], "1296"], "-", 
+          RowBox[{
+           FractionBox["1712", "105"], " ", 
+           RowBox[{"Log", "[", 
+            RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}], "+", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1712", "105"]}], " ", 
+         RowBox[{"Log", "[", 
+          FractionBox["x", "x0"], "]"}]}]}], ")"}], " ", 
+      SuperscriptBox["x", "3"]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+           RowBox[{"(", 
+            RowBox[{"55", "+", 
+             RowBox[{"6", " ", "k"}]}], ")"}], " ", "\[Nu]", " ", 
+           RowBox[{"(", 
+            RowBox[{"743", "+", 
+             RowBox[{"924", " ", "\[Nu]"}]}], ")"}]}], 
+          RowBox[{"105", " ", "m"}]]}], "+", 
+        FractionBox[
+         RowBox[{"\[Pi]", " ", 
+          RowBox[{"(", 
+           RowBox[{"204321085", "+", 
+            RowBox[{"1585376142", " ", "\[Nu]"}], "+", 
+            RowBox[{"1412728296", " ", 
+             SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], "5080320"]}], ")"}], 
+      " ", 
+      SuperscriptBox["x", 
+       RowBox[{"7", "/", "2"}]]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["294668575505223653", "283906164326400"]}], "+", 
+          FractionBox[
+           RowBox[{"52664132605999", " ", "\[Nu]"}], "51209625600"], "+", 
+          FractionBox[
+           RowBox[{"384", " ", "\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"19", "+", 
+              RowBox[{"2", " ", "k"}]}], ")"}], " ", "\[Pi]", " ", "\[Nu]"}], 
+           
+           RowBox[{"5", " ", "m"}]], "+", 
+          FractionBox[
+           RowBox[{"207348007961", " ", 
+            SuperscriptBox["\[Nu]", "2"]}], "73156608"], "+", 
+          FractionBox[
+           RowBox[{"10408565", " ", 
+            SuperscriptBox["\[Nu]", "3"]}], "870912"], "+", 
+          FractionBox[
+           RowBox[{"64745", " ", 
+            SuperscriptBox["\[Nu]", "4"]}], "2304"], "+", 
+          FractionBox[
+           RowBox[{"428", " ", "EulerGamma", " ", 
+            RowBox[{"(", 
+             RowBox[{"743", "+", 
+              RowBox[{"924", " ", "\[Nu]"}]}], ")"}]}], "2205"], "-", 
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["\[Pi]", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{"807520", "+", 
+              RowBox[{"7843753", " ", "\[Nu]"}], "+", 
+              RowBox[{"2083620", " ", 
+               SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], "20160"], "+", 
+          FractionBox[
+           RowBox[{"214", " ", 
+            RowBox[{"(", 
+             RowBox[{"743", "+", 
+              RowBox[{"924", " ", "\[Nu]"}]}], ")"}], " ", 
+            RowBox[{"Log", "[", 
+             RowBox[{"16", " ", "x0"}], "]"}]}], "2205"]}], ")"}], "+", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"2", " ", 
+           RowBox[{"(", 
+            RowBox[{"79501", "+", 
+             RowBox[{"162372", " ", "\[Nu]"}]}], ")"}]}], "2205"], " ", 
+         RowBox[{"Log", "[", 
+          FractionBox["x", "x0"], "]"}]}]}], ")"}], " ", 
+      SuperscriptBox["x", "4"]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           FractionBox["1", "3"], " ", 
+           SuperscriptBox["\[Pi]", "3"], " ", 
+           RowBox[{"(", 
+            RowBox[{"64", "+", 
+             RowBox[{"451", " ", "\[Nu]"}]}], ")"}]}], "+", 
+          FractionBox[
+           RowBox[{"\[ImaginaryI]", " ", 
+            RowBox[{"(", 
+             RowBox[{"59", "+", 
+              RowBox[{"6", " ", "k"}]}], ")"}], " ", "\[Nu]", " ", 
+            RowBox[{"(", 
+             RowBox[{"6878209", "+", 
+              RowBox[{"19242720", " ", "\[Nu]"}], "+", 
+              RowBox[{"11014416", " ", 
+               SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], 
+           RowBox[{"158760", " ", "m"}]], "-", 
+          FractionBox[
+           RowBox[{"\[Pi]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "350057020138927"}], "+", 
+              RowBox[{"48984364154880", " ", "EulerGamma"}], "+", 
+              RowBox[{"859852668899840", " ", "\[Nu]"}], "+", 
+              RowBox[{"203673264841200", " ", 
+               SuperscriptBox["\[Nu]", "2"]}], "+", 
+              RowBox[{"111522277426560", " ", 
+               SuperscriptBox["\[Nu]", "3"]}]}], ")"}]}], "187768627200"], 
+          "-", 
+          RowBox[{
+           FractionBox["13696", "105"], " ", "\[Pi]", " ", 
+           RowBox[{"Log", "[", 
+            RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}], "+", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"13696", " ", "\[Pi]"}], "105"]}], " ", 
+         RowBox[{"Log", "[", 
+          FractionBox["x", "x0"], "]"}]}]}], ")"}], " ", 
+      SuperscriptBox["x", 
+       RowBox[{"9", "/", "2"}]]}], "+", 
+     InterpretationBox[
+      SuperscriptBox[
+       RowBox[{"O", "[", "x", "]"}], 
+       RowBox[{"11", "/", "2"}]],
+      SeriesData[$CellContext`x, 0, {}, 0, 11, 2],
+      Editable->False]}],
+    SeriesData[$CellContext`x, 0, {
+      $CellContext`IdHead[1], 0, 
+      $CellContext`IdHead[
+      Rational[-743, 168] + Rational[-11, 2] $CellContext`\[Nu]], 
+      $CellContext`IdHead[8 Pi], 
+      $CellContext`IdHead[
+      Rational[1, 1016064] (8787977 + 26127864 $CellContext`\[Nu] + 
+        14344848 $CellContext`\[Nu]^2)], 
+      $CellContext`IdHead[Complex[0, 
+          Rational[32, 5]] (17 + 
+         2 $CellContext`k) $CellContext`m^(-1) $CellContext`\[Nu] + 
+       Rational[-1, 1680] 
+        Pi (50515 + 116522 $CellContext`\[Nu])], $CellContext`IdHead[
+       Rational[27199967383, 119750400] + Rational[-3424, 105] EulerGamma + 
+        Rational[80, 3] Pi^2 + 
+        Rational[-1696425571, 3048192] $CellContext`\[Nu] + 
+        Rational[451, 24] Pi^2 $CellContext`\[Nu] + 
+        Rational[-305777, 6048] $CellContext`\[Nu]^2 + 
+        Rational[-28969, 1296] $CellContext`\[Nu]^3 + 
+        Rational[-1712, 105] Log[16 $CellContext`x0]] + $CellContext`IdHead[
+         Rational[-1712, 105]] Log[$CellContext`x/$CellContext`x0], 
+      $CellContext`IdHead[Complex[0, 
+          Rational[-2, 105]] (55 + 
+         6 $CellContext`k) $CellContext`m^(-1) $CellContext`\[Nu] (743 + 
+         924 $CellContext`\[Nu]) + 
+       Rational[1, 5080320] 
+        Pi (204321085 + 1585376142 $CellContext`\[Nu] + 
+         1412728296 $CellContext`\[Nu]^2)], $CellContext`IdHead[
+       Rational[-294668575505223653, 283906164326400] + 
+        Rational[52664132605999, 51209625600] $CellContext`\[Nu] + 
+        Complex[0, 
+           Rational[384, 5]] (19 + 2 $CellContext`k) $CellContext`m^(-1) 
+         Pi $CellContext`\[Nu] + 
+        Rational[207348007961, 73156608] $CellContext`\[Nu]^2 + 
+        Rational[10408565, 870912] $CellContext`\[Nu]^3 + 
+        Rational[64745, 2304] $CellContext`\[Nu]^4 + 
+        Rational[428, 2205] EulerGamma (743 + 924 $CellContext`\[Nu]) + 
+        Rational[-1, 20160] 
+         Pi^2 (807520 + 7843753 $CellContext`\[Nu] + 
+          2083620 $CellContext`\[Nu]^2) + 
+        Rational[214, 2205] (743 + 924 $CellContext`\[Nu]) 
+         Log[16 $CellContext`x0]] + $CellContext`IdHead[
+        Rational[2, 2205] (79501 + 162372 $CellContext`\[Nu])] 
+       Log[$CellContext`x/$CellContext`x0], $CellContext`IdHead[
+       Rational[1, 3] Pi^3 (64 + 451 $CellContext`\[Nu]) + Complex[0, 
+           Rational[1, 158760]] (59 + 
+          6 $CellContext`k) $CellContext`m^(-1) $CellContext`\[Nu] (6878209 + 
+          19242720 $CellContext`\[Nu] + 11014416 $CellContext`\[Nu]^2) + 
+        Rational[-1, 187768627200] 
+         Pi (-350057020138927 + 48984364154880 EulerGamma + 
+          859852668899840 $CellContext`\[Nu] + 
+          203673264841200 $CellContext`\[Nu]^2 + 
+          111522277426560 $CellContext`\[Nu]^3) + 
+        Rational[-13696, 105] Pi 
+         Log[16 $CellContext`x0]] + $CellContext`IdHead[
+        Rational[-13696, 105] Pi] Log[$CellContext`x/$CellContext`x0]}, 0, 11,
+      2],
+    Editable->False], ")"}]}]], "Output",
+ Background->RGBColor[1, 0.925, 0.925],
+ CellLabel->
+  "Out[21]=",ExpressionUUID->"019854f7-a1ff-4900-9c44-3fab41f0cc8f"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["4. Check", \
+"Subsection",ExpressionUUID->"dced32ae-c56a-47aa-b90a-dd6ef301d851"],
+
+Cell["\<\
+Check that the derivative of our claimed integral agrees with our integrand \
+up to sufficiently high order:\
+\>", "Text",ExpressionUUID->"d139e2f6-207a-4c7b-b7a9-b26b899d501c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Collect", "[", 
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{"integral", ",", "x"}], "]"}], ",", 
+    RowBox[{"Exp", "[", "_", "]"}], ",", "Together"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"integrand", "-", "%"}], "//", "Simplify"}]}], "Input",
+ CellLabel->"In[22]:=",ExpressionUUID->"d756da31-653f-40dd-945e-a677f840b5f8"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[ExponentialE]", 
+   InterpretationBox[
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"\[ImaginaryI]", " ", "m"}], 
+       RowBox[{"32", " ", "\[Nu]", " ", 
+        SuperscriptBox["x", 
+         RowBox[{"5", "/", "2"}]]}]]}], "-", 
+     FractionBox[
+      RowBox[{"5", " ", "\[ImaginaryI]", " ", "m", " ", 
+       RowBox[{"(", 
+        RowBox[{"743", "+", 
+         RowBox[{"924", " ", "\[Nu]"}]}], ")"}]}], 
+      RowBox[{"32256", " ", "\[Nu]", " ", 
+       SuperscriptBox["x", 
+        RowBox[{"3", "/", "2"}]]}]], "+", 
+     FractionBox[
+      RowBox[{"5", " ", "\[ImaginaryI]", " ", "m", " ", "\[Pi]"}], 
+      RowBox[{"16", " ", "\[Nu]", " ", "x"}]], "-", 
+     FractionBox[
+      RowBox[{"5", " ", "\[ImaginaryI]", " ", "m", " ", 
+       RowBox[{"(", 
+        RowBox[{"3058673", "+", 
+         RowBox[{"5472432", " ", "\[Nu]"}], "+", 
+         RowBox[{"4353552", " ", 
+          SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}], 
+      RowBox[{"32514048", " ", "\[Nu]", " ", 
+       SqrtBox["x"]}]], "+", 
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", "\[Pi]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "38645"}], "+", 
+         RowBox[{"5824", " ", "\[Nu]"}]}], ")"}], " ", 
+       RowBox[{"Log", "[", 
+        FractionBox["x", "x0"], "]"}]}], 
+      RowBox[{"43008", " ", "\[Nu]"}]], "+", 
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", "m", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "12348611926451"}], "+", 
+         RowBox[{"1530761379840", " ", "EulerGamma"}], "+", 
+         RowBox[{"1001432678400", " ", 
+          SuperscriptBox["\[Pi]", "2"]}], "+", 
+         RowBox[{"24236159077900", " ", "\[Nu]"}], "-", 
+         RowBox[{"882121363200", " ", 
+          SuperscriptBox["\[Pi]", "2"], " ", "\[Nu]"}], "-", 
+         RowBox[{"206607970800", " ", 
+          SuperscriptBox["\[Nu]", "2"]}], "+", 
+         RowBox[{"462992376000", " ", 
+          SuperscriptBox["\[Nu]", "3"]}], "+", 
+         RowBox[{"765380689920", " ", 
+          RowBox[{"Log", "[", 
+           FractionBox["x", "x0"], "]"}]}], "+", 
+         RowBox[{"765380689920", " ", 
+          RowBox[{"Log", "[", 
+           RowBox[{"16", " ", "x0"}], "]"}]}]}], ")"}], " ", 
+       SqrtBox["x"]}], 
+      RowBox[{"600859607040", " ", "\[Nu]"}]], "+", 
+     FractionBox[
+      RowBox[{"5", " ", "\[ImaginaryI]", " ", "m", " ", "\[Pi]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "15419335"}], "-", 
+         RowBox[{"12718104", " ", "\[Nu]"}], "+", 
+         RowBox[{"4975824", " ", 
+          SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", "x"}], 
+      RowBox[{"65028096", " ", "\[Nu]"}]], "-", 
+     RowBox[{"3", " ", "\[ImaginaryI]", " ", "m", " ", 
+      RowBox[{"Log", "[", 
+       FractionBox["x", "x0"], "]"}], " ", 
+      SuperscriptBox["x", 
+       RowBox[{"3", "/", "2"}]]}], "+", 
+     RowBox[{
+      FractionBox["3", "2"], " ", "\[ImaginaryI]", " ", "m", " ", "\[Nu]", 
+      " ", 
+      RowBox[{"Log", "[", 
+       FractionBox["x", "x0"], "]"}], " ", 
+      SuperscriptBox["x", 
+       RowBox[{"5", "/", "2"}]]}], "+", 
+     InterpretationBox[
+      SuperscriptBox[
+       RowBox[{"O", "[", "x", "]"}], 
+       RowBox[{"7", "/", "2"}]],
+      SeriesData[$CellContext`x, 0, {}, -5, 7, 2],
+      Editable->False]}],
+    SeriesData[$CellContext`x, 0, {Complex[0, 
+        Rational[-1, 32]] $CellContext`m/$CellContext`\[Nu], 0, Complex[0, 
+        Rational[-5, 32256]] $CellContext`m $CellContext`\[Nu]^(-1) (743 + 
+       924 $CellContext`\[Nu]), Complex[0, 
+        Rational[5, 16]] $CellContext`m Pi/$CellContext`\[Nu], Complex[0, 
+        Rational[-5, 32514048]] $CellContext`m $CellContext`\[Nu]^(-1) (
+       3058673 + 5472432 $CellContext`\[Nu] + 4353552 $CellContext`\[Nu]^2), 
+      Complex[0, 
+        Rational[1, 43008]] $CellContext`m 
+      Pi $CellContext`\[Nu]^(-1) (-38645 + 5824 $CellContext`\[Nu]) 
+      Log[$CellContext`x/$CellContext`x0], Complex[0, 
+        Rational[
+        1, 600859607040]] $CellContext`m $CellContext`\[Nu]^(-1) \
+(-12348611926451 + 1530761379840 EulerGamma + 1001432678400 Pi^2 + 
+       24236159077900 $CellContext`\[Nu] - 882121363200 
+       Pi^2 $CellContext`\[Nu] - 206607970800 $CellContext`\[Nu]^2 + 
+       462992376000 $CellContext`\[Nu]^3 + 
+       765380689920 Log[$CellContext`x/$CellContext`x0] + 
+       765380689920 Log[16 $CellContext`x0]), Complex[0, 
+        Rational[5, 65028096]] $CellContext`m 
+      Pi $CellContext`\[Nu]^(-1) (-15419335 - 12718104 $CellContext`\[Nu] + 
+       4975824 $CellContext`\[Nu]^2), Complex[0, -3] $CellContext`m 
+      Log[$CellContext`x/$CellContext`x0], 0, Complex[0, 
+        Rational[3, 2]] $CellContext`m $CellContext`\[Nu] 
+      Log[$CellContext`x/$CellContext`x0]}, -5, 7, 2],
+    Editable->False]], " ", 
+  SuperscriptBox["x", "k"], " ", 
+  InterpretationBox[
+   SuperscriptBox[
+    RowBox[{"O", "[", "x", "]"}], "10"],
+   SeriesData[$CellContext`x, 0, {}, 20, 20, 2],
+   Editable->False]}]], "Output",
+ CellLabel->
+  "Out[23]=",ExpressionUUID->"a0ac521a-813d-4caa-9aad-6a76fa41428d"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Hooray, we started with ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", 
+    RowBox[{"5", "+", "k"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9421fb59-af7c-40e2-8b45-7f8e6f66ac18"],
+ ", and our error is 5PN higher!"
+}], "Text",ExpressionUUID->"608bb703-0a7f-466a-80bb-2d38f621fae5"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1440, 872},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+FrontEndVersion->"12.3 for Mac OS X x86 (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d0f0f37c-17b1-4046-84eb-87f4fcc0dad4"
+]
